@@ -1,17 +1,21 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include <QObject>
+#include "node.h"
 
-class List : public QObject
+template<typename T> class List
 {
-    Q_OBJECT
+    int _size;
+    Node<T>* _head;
 public:
-    explicit List(QObject *parent = nullptr);
-
-signals:
-
-public slots:
+    explicit List(Node<T> head = nullptr){
+        if(head != nullptr){
+            _head = head;
+            _size = 1;
+        } else {
+            _size = 0;
+        }
+    }
 };
 
 #endif // LIST_H
