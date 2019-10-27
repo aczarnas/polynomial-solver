@@ -15,6 +15,7 @@ signals:
 private slots:
     void cleanup();
     void IntList_CreateEmptyList_HeadNullptrSizeZero();
+    void IntList_CreateListWithHead_HeadNotNullptrSizeOneNextNullptr();
 
 public slots:
 };

@@ -20,3 +20,12 @@ void ListTest::IntList_CreateEmptyList_HeadNullptrSizeZero()
     QVERIFY(testedList->size() == 0);
 }
 
+void ListTest::IntList_CreateListWithHead_HeadNotNullptrSizeOneNextNullptr()
+{
+    Node<int>* node = new Node<int>(5, nullptr);
+    List<int>* testedList = new List<int>(node);
+    QVERIFY(testedList->head() == node);
+    QVERIFY(testedList->size() == 1);
+    QVERIFY(testedList->head()->Next() == nullptr);
+}
+

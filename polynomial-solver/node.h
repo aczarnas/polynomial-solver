@@ -8,6 +8,10 @@ template<typename T> class Node
 public:
     explicit Node(T value, Node<T>* next) :
         _value(value), _next(next){}
+
+    Node<T>* Next(){
+        return _next;
+    }
 };
 
 #endif // NODE_H
