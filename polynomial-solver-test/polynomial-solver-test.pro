@@ -11,9 +11,11 @@ INCLUDEPATH += $$POLYNOMIAL_SOLVER_PATH
 DEPENDPATH += $$POLYNOMIAL_SOLVER_PATH
 
 SOURCES +=  \
+    listtest.cpp \
     main.cpp
 
 HEADERS += \
+    listtest.h \
     main.moc
 
 DISTFILES += \
