@@ -1,8 +1,7 @@
 SOURCES += \
-    ../polynomial-solver/mainwindow.cpp
+    ../polynomial-solver/list.cpp \
+    ../polynomial-solver/polynomial.cpp
 
 HEADERS += \
-    ../polynomial-solver/mainwindow.h
-
-FORMS += \
-    ../polynomial-solver/mainwindow.ui
+    ../polynomial-solver/list.h \
+    ../polynomial-solver/polynomial.h
