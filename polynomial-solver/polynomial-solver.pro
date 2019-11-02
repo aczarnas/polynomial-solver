@@ -7,10 +7,10 @@ TEMPLATE = app
 include(../polynomial-solver-src.pri)
 
 SOURCES += main.cpp \
-    mainwindow.cpp \
+    MainWindow.cpp \
 
 HEADERS += \
-    mainwindow.h \
+    MainWindow.h \
 
 FORMS += \
-    mainwindow.ui
+    MainWindow.ui

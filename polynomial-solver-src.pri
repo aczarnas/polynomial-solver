@@ -1,9 +1,9 @@
 SOURCES += \
-    ../polynomial-solver/list.cpp \
-    ../polynomial-solver/node.cpp \
-    ../polynomial-solver/polynomial.cpp
+    ../polynomial-solver/List.cpp \
+    ../polynomial-solver/Node.cpp \
+    ../polynomial-solver/Polynomial.cpp
 
 HEADERS += \
-    ../polynomial-solver/list.h \
-    ../polynomial-solver/node.h \
-    ../polynomial-solver/polynomial.h
+    ../polynomial-solver/List.h \
+    ../polynomial-solver/Node.h \
+    ../polynomial-solver/Polynomial.h

@@ -1,5 +1,5 @@
-#include "listtest.h"
-#include <list.h>
+#include "ListTest.h"
+#include "List.h"
 
 ListTest::ListTest(QObject *parent) : QObject(parent)
 {
