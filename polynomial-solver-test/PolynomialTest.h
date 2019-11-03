@@ -13,6 +13,9 @@ signals:
 
 public slots:
     void cleanup();
+    void SecondDegreePolynomial_SolveWithWithoutPrediction_ProperResult();
+    void FourthDegreePolynomial_SolveWithWithoutPrediction_ProperResult();
+    void SecondDegreePolynomialsMinMaxAtZero_SolveStartingFromZero_ProperResults();
 };
 
 #endif // POLYNOMIALTEST_H
