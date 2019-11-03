@@ -1,6 +1,4 @@
 SOURCES += \
-    ../polynomial-solver/List.cpp \
-    ../polynomial-solver/Node.cpp \
     ../polynomial-solver/Polynomial.cpp
 
 HEADERS += \
