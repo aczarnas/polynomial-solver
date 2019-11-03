@@ -25,6 +25,17 @@ public:
     int size(){
         return _size;
     }
+
+    void append(T element){
+        if(_size == 0){
+            _head = _tail = new Node<T>(element);
+        } else {
+            _tail->SetNext(new Node<T>(element));
+            _tail = _tail->GetNext();
+        }
+
+        ++_size;
+    }
 };
 
 #endif // LIST_H
