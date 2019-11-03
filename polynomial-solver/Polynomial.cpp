@@ -1,6 +1,6 @@
 #include "Polynomial.h"
 
-Polynomial::Polynomial()
+Polynomial::Polynomial(double precision) : mPrecision(precision)
 {
 
 }

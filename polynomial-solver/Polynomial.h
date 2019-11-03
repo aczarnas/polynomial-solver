@@ -3,10 +3,13 @@
 
 class Polynomial
 {
+    double mPrecision;
+
 public:
-     Polynomial();
-     double solveUsingPrediction(double hint);
-     double solveStartingFromZero();
+    Polynomial() : mPrecision(0.1){}
+    Polynomial(double precision);
+    double solveUsingPrediction(double hint);
+    double solveStartingFromZero();
 };
 
 #endif // POLYNOMIAL_H
