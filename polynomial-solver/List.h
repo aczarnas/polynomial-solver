@@ -7,10 +7,11 @@ template<typename T> class List
 {
     int _size;
     Node<T>* _head;
+    Node<T>* _tail;
 public:
     explicit List(Node<T>* head = nullptr){
         if(head != nullptr){
-            _head = head;
+            _tail = _head = head;
             _size = 1;
         } else {
             _size = 0;
