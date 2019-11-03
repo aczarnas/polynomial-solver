@@ -12,10 +12,12 @@ DEPENDPATH += $$POLYNOMIAL_SOLVER_PATH
 
 SOURCES +=  \
     ListTest.cpp \
+    PolynomialTest.cpp \
     main.cpp
 
 HEADERS += \
     ListTest.h \
+    PolynomialTest.h \
     main.moc
 
 DISTFILES += \
