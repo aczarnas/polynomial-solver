@@ -6,11 +6,15 @@ template<typename T> class Node
     T _value;
     Node<T>* _next;
 public:
-    explicit Node(T value, Node<T>* next) :
+    explicit Node(T value, Node<T>* next = nullptr) :
         _value(value), _next(next){}
 
-    Node<T>* Next(){
+    Node<T>* GetNext(){
         return _next;
+    }
+
+    void SetNext(Node<T> next){
+        _next = next;
     }
 };
 
