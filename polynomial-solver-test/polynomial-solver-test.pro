@@ -18,6 +18,7 @@ SOURCES +=  \
 HEADERS += \
     ListTest.h \
     PolynomialTest.h \
+    helpers.h \
     main.moc
 
 DISTFILES += \
