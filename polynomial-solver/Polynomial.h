@@ -19,7 +19,8 @@ public:
     Polynomial(double precision);
     double solveUsingPrediction(double hint);
     double solveStartingFromZero();
-    void setPrimalForm(List<Indeterminate>* primal);
+    void setPrimalForm(List<Indeterminate>* primal) {p_mPrimalForm = primal;}
+    double getPrecision() {return mPrecision;}
 };
 
 #endif // POLYNOMIAL_H
