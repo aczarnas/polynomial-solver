@@ -2,6 +2,7 @@
 #define POLYNOMIALTEST_H
 
 #include <QObject>
+#include <QTest>
 
 class PolynomialTest : public QObject
 {
@@ -11,7 +12,7 @@ public:
 
 signals:
 
-public slots:
+private slots:
     void cleanup();
     void SecondDegreePolynomial_SolveWithWithoutPrediction_ProperResult();
     void FourthDegreePolynomial_SolveWithWithoutPrediction_ProperResult();
