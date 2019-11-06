@@ -13,7 +13,7 @@ public:
         return _next;
     }
 
-    void SetNext(Node<T> next){
+    void SetNext(Node<T>* next){
         _next = next;
     }
 };
