@@ -28,7 +28,7 @@ bool UiServices::writeToFile(const QString filePath, const QString textToWrite)
 bool UiServices::parsePolynomialFromCsv(Polynomial& poly, const QString input)
 {
     auto lines = input.split('\n');
-    auto line = lines.begin();
+    auto line = lines.constBegin();
 
     if(lines[0].contains("x_power")){
         ++line;
@@ -36,9 +36,12 @@ bool UiServices::parsePolynomialFromCsv(Polynomial& poly, const QString input)
 
     auto primal = poly.getPrimalFormPointer();
     primal->clear();
-    while(line != lines.end()) {
+    while(line != lines.constEnd()) {
         auto args = line->split(',');
-        Indeterminate curr(args[0].toInt(),args[1].toInt());
+        if(args.size() < 2) {
+            break;
+        }
+        Indeterminate curr(args[1].toInt(), args[0].toInt());
         primal->append(curr);
         ++line;
     }
