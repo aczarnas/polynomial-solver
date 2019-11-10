@@ -1,3 +1,9 @@
+//! List class template
+/*!
+ * \brief Simple double linked list implementation
+ * \tparam T Type to work with
+ */
+
 #ifndef LIST_H
 #define LIST_H
 
@@ -9,6 +15,7 @@ template<typename T> class List
     Node<T>* p_mHead;
     Node<T>* p_mTail;
 public:
+    //! Default constructor taking optional parameter with head node pointer
     explicit List(Node<T>* head = nullptr){
         if(head != nullptr){
             p_mTail = p_mHead = head;
@@ -19,14 +26,22 @@ public:
         }
     }
 
+    //! Destructor
     ~List(){
         clear();
     }
 
+    //! Getter for head pointer
     Node<T>* getHead() {return p_mHead;}
+    //! Getter for tail pointer
     Node<T>* getTail() {return p_mTail;}
+    //! Getter for list size
     int getSize() {return mSize;}
 
+    //! Adds T type element to list
+    /*!
+     * \param element value to be added to list
+     */
     void append(T element){
         if(mSize == 0){
             p_mHead = p_mTail = new Node<T>(element);
@@ -39,6 +54,7 @@ public:
         ++mSize;
     }
 
+    //! Clears list from existing nodes
     void clear(){
         Node<T>* handler = p_mHead;
         while(handler != nullptr){
