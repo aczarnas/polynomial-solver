@@ -17,9 +17,16 @@ class Polynomial
     List<Indeterminate>* p_mFirstDerivative;
 
     bool calculateDerivative();
-public:
+
     Polynomial();
-    Polynomial(double precision);
+    ~Polynomial();
+public:
+    // make sure copy constructors won't exist for singleton
+    Polynomial(Polynomial const&) = delete;
+    void operator=(Polynomial const&) = delete;
+
+    static Polynomial& getInstance();
+
     double solveUsingPrediction(double hint);
     double solveStartingFromZero();
     void setPrecision(double precision) {mPrecision = precision;}

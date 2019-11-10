@@ -22,10 +22,16 @@ Polynomial::Polynomial() : mPrecision(0.1){
     p_mFirstDerivative = new List<Indeterminate>();
 }
 
-Polynomial::Polynomial(double precision) : mPrecision(precision)
+Polynomial::~Polynomial()
 {
-    p_mPrimalForm = new List<Indeterminate>();
-    p_mFirstDerivative = new List<Indeterminate>();
+    delete p_mPrimalForm;
+    delete p_mFirstDerivative;
+}
+
+Polynomial &Polynomial::getInstance()
+{
+    static Polynomial instance;
+    return instance;
 }
 
 double Polynomial::solveUsingPrediction(double hint)

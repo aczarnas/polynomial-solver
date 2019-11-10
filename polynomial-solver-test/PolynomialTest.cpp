@@ -19,7 +19,7 @@ void PolynomialTest::SecondDegreePolynomial_SolveWithWithoutPrediction_ProperRes
     Indeterminate first(4.0, 1);
     Indeterminate second(1.0, 2);
 
-    Polynomial tested;
+    Polynomial& tested = Polynomial::getInstance();
     List<Indeterminate>* poly = tested.getPrimalFormPointer();
     poly->append(zero);
     poly->append(first);
@@ -39,7 +39,7 @@ void PolynomialTest::FourthDegreePolynomial_SolveWithWithoutPrediction_ProperRes
     Indeterminate third(-1.0, 3);
     Indeterminate fourth(2.0, 4);
 
-    Polynomial tested;
+    Polynomial& tested = Polynomial::getInstance();
     List<Indeterminate>* poly = tested.getPrimalFormPointer();
     poly->append(zero);
     poly->append(first);
