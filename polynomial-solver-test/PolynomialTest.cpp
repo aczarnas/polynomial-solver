@@ -24,14 +24,12 @@ void PolynomialTest::SecondDegreePolynomial_SolveWithWithoutPrediction_ProperRes
     poly.append(zero);
     poly.append(first);
     poly.append(second);
-
-    double polyZero1 = 3.0;
-    double polyZero2 = -7.0;
-
     tested.setPrimalForm(&poly);
 
-    QVERIFY(compareDoubles(tested.solveStartingFromZero(), polyZero1, tested.getPrecision()));
-    QVERIFY(compareDoubles(tested.solveUsingPrediction(-5), polyZero2, tested.getPrecision()));
+    double polyZero[] = {-7.0, 3.0};
+
+    QVERIFY(compareDoubles(tested.solveStartingFromZero(), polyZero[1], tested.getPrecision()));
+    QVERIFY(compareDoubles(tested.solveUsingPrediction(-5), polyZero[0], tested.getPrecision()));
 }
 
 void PolynomialTest::FourthDegreePolynomial_SolveWithWithoutPrediction_ProperResult()
