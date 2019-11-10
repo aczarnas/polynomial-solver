@@ -1,5 +1,7 @@
 #include "Polynomial.h"
 
+#include <QStringBuilder>
+
 bool Polynomial::calculateDerivative()
 {
     if(this->p_mPrimalForm->getSize() < 1) {
@@ -44,4 +46,20 @@ double Polynomial::solveStartingFromZero()
 {
     calculateDerivative();
     return 0.0;
+}
+
+QString Polynomial::getFirstDerivativeAsString()
+{
+    QString result("");
+    Node<Indeterminate>* curr = p_mFirstDerivative->getHead();
+    while(curr != nullptr){
+        if(curr->getValue().mConstant == 0.0) {
+            continue;
+        } else if(curr->getValue().mConstant > 0) {
+            result.append("+");
+        }
+        result.append(QString("%1x^%2").arg(curr->getValue().mConstant).arg(curr->getValue().mPower));
+        curr = curr->getNext();
+    }
+    return result;
 }

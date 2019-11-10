@@ -34,4 +34,5 @@ void MainWindow::on_calculateButton_clicked()
     Polynomial& poly = Polynomial::getInstance();
     UiServices::parsePolynomialFromCsv(poly, ui->polynomialDisplayTextEdit->toPlainText());
     poly.solveStartingFromZero();
+    ui->firstDerivativeDisplayTextEdit->setText(poly.getFirstDerivativeAsString());
 }

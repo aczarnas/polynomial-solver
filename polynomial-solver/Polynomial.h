@@ -1,6 +1,7 @@
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
 
+#include <QString>
 #include "List.h"
 
 struct Indeterminate{
@@ -32,6 +33,7 @@ public:
     void setPrecision(double precision) {mPrecision = precision;}
     double getPrecision() {return mPrecision;}
     List<Indeterminate>* getPrimalFormPointer() {return p_mPrimalForm;}
+    QString getFirstDerivativeAsString();
 };
 
 #endif // POLYNOMIAL_H
