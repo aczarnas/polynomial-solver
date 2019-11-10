@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include <QStandardPaths>
 #include "UiServices.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -7,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->filePathTextBox->setText(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
 }
 
 MainWindow::~MainWindow()
