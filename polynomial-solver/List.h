@@ -30,8 +30,10 @@ public:
         if(_size == 0){
             _head = _tail = new Node<T>(element);
         } else {
-            _tail->SetNext(new Node<T>(element));
-            _tail = _tail->GetNext();
+            Node<T>* el = new Node<T>(element);
+            _tail->SetNext(el);
+            el->SetPrev(_tail);
+            _tail = el;
         }
 
         ++_size;
