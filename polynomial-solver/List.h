@@ -27,8 +27,8 @@ public:
             p_mHead = p_mTail = new Node<T>(element);
         } else {
             Node<T>* el = new Node<T>(element);
-            p_mTail->SetNext(el);
-            el->SetPrev(p_mTail);
+            p_mTail->setNext(el);
+            el->setPrev(p_mTail);
             p_mTail = el;
         }
 

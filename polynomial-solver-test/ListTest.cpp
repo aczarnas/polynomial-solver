@@ -26,6 +26,6 @@ void ListTest::IntList_CreateListWithHead_HeadNotNullptrSizeOneNextNullptr()
     List<int>* testedList = new List<int>(node);
     QVERIFY(testedList->getHead() == node);
     QVERIFY(testedList->getSize() == 1);
-    QVERIFY(testedList->getHead()->GetNext() == nullptr);
+    QVERIFY(testedList->getHead()->getNext() == nullptr);
 }
 
