@@ -18,13 +18,9 @@ public:
         }
     }
 
-    Node<T>* head(){
-        return p_mHead;
-    }
-
-    int size(){
-        return mSize;
-    }
+    Node<T>* getHead() {return p_mHead;}
+    Node<T>* getTail() {return p_mTail;}
+    int getSize() {return mSize;}
 
     void append(T element){
         if(mSize == 0){
