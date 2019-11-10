@@ -18,6 +18,24 @@ public:
         }
     }
 
+    ~List(){
+        if(mSize == 0){
+            return;
+        }
+        if(mSize == 1){
+            delete p_mHead;
+            return;
+        }
+        Node<T>* handler = p_mHead;
+        while(handler != nullptr){
+            Node<T>* next = handler->getNext();
+            delete handler;
+            --mSize;
+            handler = next;
+        }
+
+    }
+
     Node<T>* getHead() {return p_mHead;}
     Node<T>* getTail() {return p_mTail;}
     int getSize() {return mSize;}
