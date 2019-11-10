@@ -4,8 +4,8 @@
 template<typename T> class Node
 {
     T _value;
-    Node<T>* p_mNext;
     Node<T>* p_mPrev;
+    Node<T>* p_mNext;
 public:
     explicit Node(T value, Node<T>* prev = nullptr, Node<T>* next = nullptr) :
         _value(value), p_mPrev(prev), p_mNext(next){}
