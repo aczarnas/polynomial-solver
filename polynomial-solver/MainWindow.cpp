@@ -28,3 +28,8 @@ void MainWindow::on_loadButton_clicked()
     UiServices::readFromFile(ui->filePathTextBox->text(), temp);
     ui->polynomialDisplayTextEdit->setText(temp);
 }
+
+void MainWindow::on_calculateButton_clicked()
+{
+    // nothing for now
+}
