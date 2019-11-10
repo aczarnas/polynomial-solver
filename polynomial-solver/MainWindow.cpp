@@ -31,5 +31,7 @@ void MainWindow::on_loadButton_clicked()
 
 void MainWindow::on_calculateButton_clicked()
 {
-    // nothing for now
+    Polynomial& poly = Polynomial::getInstance();
+    UiServices::parsePolynomialFromCsv(poly, ui->polynomialDisplayTextEdit->toPlainText());
+    poly.solveStartingFromZero();
 }
