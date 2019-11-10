@@ -1,13 +1,28 @@
+//! Polynomial singleton class
+/*!
+ * \class Polynomial
+ * \brief Handler class for polynomial with solving methods
+ */
+
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
 
 #include <QString>
 #include "List.h"
 
-struct Indeterminate{
-    double mConstant;
+//! Indeterminate structure used with Polynomial class
+struct Indeterminate
+{
+    //! Coefficient floating-point number of indeterminate
+    double mConstant; // TODO: refactor to mCoefficient
+    //! Power integer of Indeterminate
     int mPower;
 
+    //! Default constructor for structure
+    /*!
+     * \param constant coefficient value of Indeterminate
+     * \param power power value of Indeterminate
+     */
     Indeterminate(double constant, int power): mConstant(constant), mPower(power) {}
 };
 
@@ -22,17 +37,34 @@ class Polynomial
     Polynomial();
     ~Polynomial();
 public:
-    // make sure copy constructors won't exist for singleton
+    //! Declaration of non-existing copy constructor
     Polynomial(Polynomial const&) = delete;
+    //! Declaration of non-existing operator= overload
     void operator=(Polynomial const&) = delete;
 
+    //! getInstance method provides access to Polynomial singleton object
     static Polynomial& getInstance();
 
+    /*!
+     * Solves loaded polynomial using provided hint
+     * \param hint floating-point value to start searching for polynomial solution
+     * \return floating-point value approximation of solution which lies closer than mPrecision to real solution
+     */
     double solveUsingPrediction(double hint);
+
+    /*!
+     * Solves loaded polynomial starting from x=0
+     * \return floating-point value approximation of solution which lies closer than mPrecision to real solution
+     */
     double solveStartingFromZero();
+
+    //! Setter for solution prevision value
     void setPrecision(double precision) {mPrecision = precision;}
+    //! Getter for solution precision value
     double getPrecision() {return mPrecision;}
+    //! Getter for polynomial primal form pointer
     List<Indeterminate>* getPrimalFormPointer() {return p_mPrimalForm;}
+    //! Getter for string form of first derivative of polynomial
     QString getFirstDerivativeAsString();
 };
 

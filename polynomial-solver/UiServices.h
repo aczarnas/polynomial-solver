@@ -1,10 +1,9 @@
+//! Helper namespace with services used by UI
 #ifndef UISERVICES_H
 #define UISERVICES_H
 
 #include <QFile>
 #include "Polynomial.h"
-
-
 
 namespace UiServices {
     bool readFromFile(const QString filePath, QString& readText);
