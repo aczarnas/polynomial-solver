@@ -16,6 +16,7 @@ class Polynomial
     List<Indeterminate>* p_mPrimalForm;
     List<Indeterminate>* p_mFirstDerivative;
 
+    bool calculateDerivative();
 public:
     Polynomial() : mPrecision(0.1){}
     Polynomial(double precision);
