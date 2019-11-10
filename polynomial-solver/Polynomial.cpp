@@ -17,9 +17,15 @@ bool Polynomial::calculateDerivative()
     return true;
 }
 
+Polynomial::Polynomial() : mPrecision(0.1){
+    p_mPrimalForm = new List<Indeterminate>();
+    p_mFirstDerivative = new List<Indeterminate>();
+}
+
 Polynomial::Polynomial(double precision) : mPrecision(precision)
 {
-
+    p_mPrimalForm = new List<Indeterminate>();
+    p_mFirstDerivative = new List<Indeterminate>();
 }
 
 double Polynomial::solveUsingPrediction(double hint)

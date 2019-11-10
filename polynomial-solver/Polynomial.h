@@ -18,12 +18,13 @@ class Polynomial
 
     bool calculateDerivative();
 public:
-    Polynomial() : mPrecision(0.1){}
+    Polynomial();
     Polynomial(double precision);
     double solveUsingPrediction(double hint);
     double solveStartingFromZero();
-    void setPrimalForm(List<Indeterminate>* primal) {p_mPrimalForm = primal;}
+    void setPrecision(double precision) {mPrecision = precision;}
     double getPrecision() {return mPrecision;}
+    List<Indeterminate>* getPrimalFormPointer() {return p_mPrimalForm;}
 };
 
 #endif // POLYNOMIAL_H
