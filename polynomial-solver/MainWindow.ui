@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -25,7 +25,28 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
+      <widget class="QLabel" name="polynomialDisplayTextEditLabel">
+       <property name="text">
+        <string>Loaded polynomial</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QTextEdit" name="polynomialDisplayTextEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="firstDerivativeDisplayTextEditLavel">
+       <property name="text">
+        <string>First derivative</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="firstDerivativeDisplayTextEdit">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -68,6 +89,13 @@
         <widget class="QPushButton" name="editButton">
          <property name="text">
           <string>Edit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="calculateButton">
+         <property name="text">
+          <string>Calculate</string>
          </property>
         </widget>
        </item>
