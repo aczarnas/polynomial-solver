@@ -14,6 +14,7 @@ public:
             p_mTail = p_mHead = head;
             mSize = 1;
         } else {
+            p_mTail = p_mHead = nullptr;
             mSize = 0;
         }
     }
