@@ -14,6 +14,8 @@ class Polynomial
 {
     double mPrecision;
     List<Indeterminate>* p_mPrimalForm;
+    List<Indeterminate>* p_mFirstDerivative;
+
 public:
     Polynomial() : mPrecision(0.1){}
     Polynomial(double precision);
