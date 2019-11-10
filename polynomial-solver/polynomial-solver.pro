@@ -8,9 +8,11 @@ include(../polynomial-solver-src.pri)
 
 SOURCES += main.cpp \
     MainWindow.cpp \
+    UiServices.cpp
 
 HEADERS += \
     MainWindow.h \
+    UiServices.h
 
 FORMS += \
     MainWindow.ui
