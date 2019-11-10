@@ -5,38 +5,38 @@
 
 template<typename T> class List
 {
-    int _size;
-    Node<T>* _head;
-    Node<T>* _tail;
+    int mSize;
+    Node<T>* p_mHead;
+    Node<T>* p_mTail;
 public:
     explicit List(Node<T>* head = nullptr){
         if(head != nullptr){
-            _tail = _head = head;
-            _size = 1;
+            p_mTail = p_mHead = head;
+            mSize = 1;
         } else {
-            _size = 0;
+            mSize = 0;
         }
     }
 
     Node<T>* head(){
-        return _head;
+        return p_mHead;
     }
 
     int size(){
-        return _size;
+        return mSize;
     }
 
     void append(T element){
-        if(_size == 0){
-            _head = _tail = new Node<T>(element);
+        if(mSize == 0){
+            p_mHead = p_mTail = new Node<T>(element);
         } else {
             Node<T>* el = new Node<T>(element);
-            _tail->SetNext(el);
-            el->SetPrev(_tail);
-            _tail = el;
+            p_mTail->SetNext(el);
+            el->SetPrev(p_mTail);
+            p_mTail = el;
         }
 
-        ++_size;
+        ++mSize;
     }
 };
 
