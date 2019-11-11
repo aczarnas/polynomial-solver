@@ -56,7 +56,7 @@ void Polynomial::clearData()
     p_mFirstDerivative->clear();
 }
 
-double Polynomial::solveUsingPrediction(double hint)
+double Polynomial::solveUsingPrediction(double hint = 0.0)
 {
     calculateDerivative();
     double result = hint;
@@ -69,11 +69,6 @@ double Polynomial::solveUsingPrediction(double hint)
         result = previous - polyValue/deriValue;
     }
     return result;
-}
-
-double Polynomial::solveStartingFromZero()
-{
-    return 0.0;
 }
 
 List<Indeterminate> *Polynomial::getFirstDerivativePointer()

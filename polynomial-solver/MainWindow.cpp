@@ -39,5 +39,4 @@ void MainWindow::on_loadButton_clicked()
 void MainWindow::on_calculateButton_clicked()
 {
     Polynomial& poly = Polynomial::getInstance();
-    poly.solveStartingFromZero();
 }

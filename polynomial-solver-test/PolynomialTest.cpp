@@ -32,8 +32,8 @@ void PolynomialTest::SecondDegreePolynomial_SolveWithWithoutPrediction_ProperRes
 
     double polyZero[] = {-7.0, 3.0};
 
-    QVERIFY(compareDoubles(tested.solveUsingPrediction(-5), polyZero[0], tested.getPrecision()));
-    QVERIFY(compareDoubles(tested.solveStartingFromZero(), polyZero[1], tested.getPrecision()));
+    QVERIFY(compareDoubles(tested.solveUsingPrediction(-5.0), polyZero[0], tested.getPrecision()));
+    QVERIFY(compareDoubles(tested.solveUsingPrediction(), polyZero[1], tested.getPrecision()));
 }
 
 void PolynomialTest::FourthDegreePolynomial_SolveWithWithoutPrediction_ProperResult()
@@ -58,8 +58,7 @@ void PolynomialTest::FourthDegreePolynomial_SolveWithWithoutPrediction_ProperRes
     QVERIFY(compareDoubles(tested.solveUsingPrediction(-1.5), polyZero[1], tested.getPrecision()));
     QVERIFY(compareDoubles(tested.solveUsingPrediction(2.0), polyZero[2], tested.getPrecision()));
     QVERIFY(compareDoubles(tested.solveUsingPrediction(2.8), polyZero[3], tested.getPrecision()));
-
-    QVERIFY(compareDoubles(tested.solveStartingFromZero(), polyZero[1], tested.getPrecision()));
+    QVERIFY(compareDoubles(tested.solveUsingPrediction(), polyZero[1], tested.getPrecision()));
 }
 
 void PolynomialTest::SecondDegreePolynomialsMinMaxAtZero_SolveStartingFromZero_ProperResults()
