@@ -28,22 +28,20 @@ void MainWindow::on_loadButton_clicked()
     QString temp;
     UiServices::readFromFile(ui->filePathTextBox->text(), temp);
 
-    Polynomial& poly = Polynomial::getInstance();
-    UiServices::parsePolynomialFromCsv(poly, temp);
+    UiServices::parsePolynomialFromCsv(polynomialInstance, temp);
 
-    ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(poly.getPrimalFormPointer()));
-    poly.calculateDerivative();
-    ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(poly.getFirstDerivativePointer()));
-    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(poly.getPrecision()));
+    ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getPrimalFormPointer()));
+    polynomialInstance.calculateDerivative();
+    ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getFirstDerivativePointer()));
+    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(polynomialInstance.getPrecision()));
 }
 
 void MainWindow::on_calculateButton_clicked()
 {
-    Polynomial& poly = Polynomial::getInstance();
     bool hintOk = false;
     double hint = ui->hintInputLineEdit->text().toDouble(&hintOk);
     if(hintOk) {
-        double solution = poly.findSingleSolutionPoint(hint);
+        double solution = polynomialInstance.findSingleSolutionPoint(hint);
         ui->foundSolutionsDisplayTextEdit->append(QString("x = %1").arg(solution));
     }
 }
