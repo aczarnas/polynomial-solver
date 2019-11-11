@@ -47,3 +47,19 @@ bool UiServices::parsePolynomialFromCsv(Polynomial& poly, const QString input)
     }
     return true;
 }
+
+QString UiServices::parseIndeterminateListToReadableString(List<Indeterminate>* polynomial)
+{
+    QString result("");
+    Node<Indeterminate>* curr = polynomial->getHead();
+    while(curr != nullptr){
+        if(curr->getValue().mConstant == 0.0) {
+            continue;
+        } else if(curr->getValue().mConstant > 0) {
+            result.append("+");
+        }
+        result.append(QString("%1x^%2").arg(curr->getValue().mConstant).arg(curr->getValue().mPower));
+        curr = curr->getNext();
+    }
+    return result;
+}
