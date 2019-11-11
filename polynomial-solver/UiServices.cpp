@@ -63,3 +63,14 @@ QString UiServices::parseIndeterminateListToReadableString(List<Indeterminate>* 
     }
     return result;
 }
+
+QString UiServices::generateCsvFromPolynomial(Polynomial& poly)
+{
+    QString result("x_power,x_constant\n");
+    Node<Indeterminate>* curr = poly.getPrimalFormPointer()->getHead();
+    while(curr != nullptr){
+        result.append(QString("%1,%2\n").arg(curr->getValue().mPower).arg(curr->getValue().mConstant));
+        curr = curr->getNext();
+    }
+    return result;
+}

@@ -10,6 +10,7 @@ namespace UiServices {
     bool writeToFile(const QString filePath, const QString textToWrite);
     bool parsePolynomialFromCsv(Polynomial& poly, const QString input);
     QString parseIndeterminateListToReadableString(List<Indeterminate>* polynomial);
+    QString generateCsvFromPolynomial(Polynomial& poly);
 }
 
 #endif // UISERVICES_H
