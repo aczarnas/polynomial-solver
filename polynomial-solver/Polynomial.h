@@ -67,8 +67,8 @@ public:
     double getPrecision() {return mPrecision;}
     //! Getter for polynomial primal form pointer
     List<Indeterminate>* getPrimalFormPointer() {return p_mPrimalForm;}
-    //! Getter for string form of first derivative of polynomial
-    QString getFirstDerivativeAsString();
+    //! Getter for polynomial first derivative pointer
+    List<Indeterminate>* getFirstDerivativePointer();
 };
 
 #endif // POLYNOMIAL_H
