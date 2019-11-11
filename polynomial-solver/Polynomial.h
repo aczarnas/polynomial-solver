@@ -34,6 +34,7 @@ class Polynomial
 
     Polynomial();
     ~Polynomial();
+    double functionValueAtPoint(List<Indeterminate>* function, double xPoint);
 public:
     //! Declaration of non-existing copy constructor
     Polynomial(Polynomial const&) = delete;

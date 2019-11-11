@@ -1,6 +1,6 @@
 #include "Polynomial.h"
 
-#include <QStringBuilder>
+#include <cmath>
 
 bool Polynomial::calculateDerivative()
 {
@@ -28,6 +28,16 @@ Polynomial::~Polynomial()
 {
     delete p_mPrimalForm;
     delete p_mFirstDerivative;
+}
+
+double Polynomial::functionValueAtPoint(List<Indeterminate>* functionHandler, double xPoint)
+{
+    double result = 0.0;
+    for(Node<Indeterminate>* node = functionHandler->getHead(); node != functionHandler->getTail(); node = node->getNext()){
+        Indeterminate curr = node->getValue();
+        result += curr.mCoefficient * pow(xPoint, curr.mPower);
+    }
+    return result;
 }
 
 Polynomial &Polynomial::getInstance()
