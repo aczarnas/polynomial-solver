@@ -40,4 +40,10 @@ void MainWindow::on_loadButton_clicked()
 void MainWindow::on_calculateButton_clicked()
 {
     Polynomial& poly = Polynomial::getInstance();
+    bool hintOk = false;
+    double hint = ui->hintInputLineEdit->text().toDouble(&hintOk);
+    if(hintOk) {
+        double solution = poly.findSingleSolutionPoint(hint);
+        ui->foundSolutionsDisplayTextEdit->append(QString("x = %1").arg(solution));
+    }
 }
