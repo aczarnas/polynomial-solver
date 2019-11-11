@@ -53,12 +53,12 @@ QString UiServices::parseIndeterminateListToReadableString(List<Indeterminate>* 
     QString result("");
     Node<Indeterminate>* curr = polynomial->getHead();
     while(curr != nullptr){
-        if(curr->getValue().mConstant == 0.0) {
+        if(curr->getValue().mCoefficient == 0.0) {
             continue;
-        } else if(curr->getValue().mConstant > 0) {
+        } else if(curr->getValue().mCoefficient > 0) {
             result.append("+");
         }
-        result.append(QString("%1x^%2").arg(curr->getValue().mConstant).arg(curr->getValue().mPower));
+        result.append(QString("%1x^%2").arg(curr->getValue().mCoefficient).arg(curr->getValue().mPower));
         curr = curr->getNext();
     }
     return result;
@@ -69,7 +69,7 @@ QString UiServices::generateCsvFromPolynomial(Polynomial& poly)
     QString result("x_power,x_constant\n");
     Node<Indeterminate>* curr = poly.getPrimalFormPointer()->getHead();
     while(curr != nullptr){
-        result.append(QString("%1,%2\n").arg(curr->getValue().mPower).arg(curr->getValue().mConstant));
+        result.append(QString("%1,%2\n").arg(curr->getValue().mPower).arg(curr->getValue().mCoefficient));
         curr = curr->getNext();
     }
     return result;

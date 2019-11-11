@@ -14,7 +14,7 @@
 struct Indeterminate
 {
     //! Coefficient floating-point number of indeterminate
-    double mConstant; // TODO: refactor to mCoefficient
+    double mCoefficient;
     //! Power integer of Indeterminate
     int mPower;
 
@@ -23,7 +23,7 @@ struct Indeterminate
      * \param constant coefficient value of Indeterminate
      * \param power power value of Indeterminate
      */
-    Indeterminate(double constant, int power): mConstant(constant), mPower(power) {}
+    Indeterminate(double constant, int power): mCoefficient(constant), mPower(power) {}
 };
 
 class Polynomial

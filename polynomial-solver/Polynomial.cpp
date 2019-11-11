@@ -12,7 +12,7 @@ bool Polynomial::calculateDerivative()
     }
     p_mFirstDerivative = new List<Indeterminate>();
     for(Node<Indeterminate>* node = this->p_mPrimalForm->getHead(); node != this->p_mPrimalForm->getTail(); node = node->getNext()){
-        Indeterminate* calculated = new Indeterminate(node->getValue().mConstant * node->getValue().mPower, node->getValue().mPower - 1);
+        Indeterminate* calculated = new Indeterminate(node->getValue().mCoefficient * node->getValue().mPower, node->getValue().mPower - 1);
         Node<Indeterminate>* current = new Node<Indeterminate>(*calculated);
         p_mFirstDerivative->append(current->getValue());
     }
