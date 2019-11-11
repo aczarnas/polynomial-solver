@@ -21,14 +21,14 @@ void PolynomialTest::SecondDegreePolynomial_SolveWithWithoutPrediction_ProperRes
 
     Polynomial& tested = Polynomial::getInstance();
     List<Indeterminate>* poly = tested.getPrimalFormPointer();
-    poly->append(zero);
-    poly->append(first);
     poly->append(second);
+    poly->append(first);
+    poly->append(zero);
 
     double polyZero[] = {-7.0, 3.0};
 
-    QVERIFY(compareDoubles(tested.solveStartingFromZero(), polyZero[1], tested.getPrecision()));
     QVERIFY(compareDoubles(tested.solveUsingPrediction(-5), polyZero[0], tested.getPrecision()));
+    QVERIFY(compareDoubles(tested.solveStartingFromZero(), polyZero[1], tested.getPrecision()));
 }
 
 void PolynomialTest::FourthDegreePolynomial_SolveWithWithoutPrediction_ProperResult()
@@ -41,11 +41,11 @@ void PolynomialTest::FourthDegreePolynomial_SolveWithWithoutPrediction_ProperRes
 
     Polynomial& tested = Polynomial::getInstance();
     List<Indeterminate>* poly = tested.getPrimalFormPointer();
-    poly->append(zero);
-    poly->append(first);
-    poly->append(second);
-    poly->append(third);
     poly->append(fourth);
+    poly->append(third);
+    poly->append(second);
+    poly->append(first);
+    poly->append(zero);
 
     double polyZero[] = {-4.0, -1.0, 2.5, 3.0};
 
