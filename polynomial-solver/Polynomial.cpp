@@ -38,13 +38,11 @@ Polynomial &Polynomial::getInstance()
 
 double Polynomial::solveUsingPrediction(double hint)
 {
-    calculateDerivative();
     return hint;
 }
 
 double Polynomial::solveStartingFromZero()
 {
-    calculateDerivative();
     return 0.0;
 }
 

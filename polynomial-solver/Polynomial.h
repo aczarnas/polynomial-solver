@@ -32,8 +32,6 @@ class Polynomial
     List<Indeterminate>* p_mPrimalForm;
     List<Indeterminate>* p_mFirstDerivative;
 
-    bool calculateDerivative();
-
     Polynomial();
     ~Polynomial();
 public:
@@ -45,6 +43,11 @@ public:
     //! getInstance method provides access to Polynomial singleton object
     static Polynomial& getInstance();
 
+    /*!
+     * Calculates derivative of loaded polynomial
+     * \return false when polynomial not loaded, true after successful calculations
+     */
+    bool calculateDerivative();
     /*!
      * Solves loaded polynomial using provided hint
      * \param hint floating-point value to start searching for polynomial solution
