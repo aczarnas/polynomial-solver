@@ -26,13 +26,17 @@ void MainWindow::on_loadButton_clicked()
 {
     QString temp;
     UiServices::readFromFile(ui->filePathTextBox->text(), temp);
-    ui->polynomialDisplayTextEdit->setText(temp);
+
+    Polynomial& poly = Polynomial::getInstance();
+    UiServices::parsePolynomialFromCsv(poly, temp);
+
+    ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(poly.getPrimalFormPointer()));
+    poly.calculateDerivative();
+    ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(poly.getFirstDerivativePointer()));
 }
 
 void MainWindow::on_calculateButton_clicked()
 {
     Polynomial& poly = Polynomial::getInstance();
-    UiServices::parsePolynomialFromCsv(poly, ui->polynomialDisplayTextEdit->toPlainText());
     poly.solveStartingFromZero();
-    ui->firstDerivativeDisplayTextEdit->setText(poly.getFirstDerivativeAsString());
 }
