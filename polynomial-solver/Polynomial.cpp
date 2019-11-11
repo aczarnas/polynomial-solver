@@ -11,7 +11,11 @@ bool Polynomial::calculateDerivative()
         delete p_mFirstDerivative;
     }
     p_mFirstDerivative = new List<Indeterminate>();
-    for(Node<Indeterminate>* node = this->p_mPrimalForm->getHead(); node != this->p_mPrimalForm->getTail(); node = node->getNext()){
+    Node<Indeterminate>* lastNode = this->p_mPrimalForm->getTail();
+    for(Node<Indeterminate>* node = this->p_mPrimalForm->getHead(); node != lastNode; node = node->getNext()){
+        if(node->getValue().mPower < 1) {
+            return false; // something is wrong with polynomial, this method should never get to power below 1
+        }
         Indeterminate* calculated = new Indeterminate(node->getValue().mCoefficient * node->getValue().mPower, node->getValue().mPower - 1);
         Node<Indeterminate>* current = new Node<Indeterminate>(*calculated);
         p_mFirstDerivative->append(current->getValue());
