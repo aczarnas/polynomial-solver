@@ -51,7 +51,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="firstDerivativeDisplayTextEditLavel">
+      <widget class="QLabel" name="firstDerivativeDisplayTextEditLabel">
        <property name="text">
         <string>First derivative</string>
        </property>
@@ -59,6 +59,20 @@
      </item>
      <item>
       <widget class="QTextEdit" name="firstDerivativeDisplayTextEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="foundSolutionsDisplayTextEditLabel">
+       <property name="text">
+        <string>Found solutions</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="foundSolutionsDisplayTextEdit">
        <property name="enabled">
         <bool>false</bool>
        </property>
