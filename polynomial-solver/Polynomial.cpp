@@ -52,7 +52,17 @@ Polynomial &Polynomial::getInstance()
 
 double Polynomial::solveUsingPrediction(double hint)
 {
-    return hint;
+    calculateDerivative();
+    double result = hint;
+    double previous = hint + mPrecision * 2;
+    while(abs(result - previous) > mPrecision)
+    {
+        double polyValue = functionValueAtPoint(p_mPrimalForm, result);
+        double deriValue = functionValueAtPoint(p_mFirstDerivative, result);
+        previous = result;
+        result = previous - polyValue/deriValue;
+    }
+    return result;
 }
 
 double Polynomial::solveStartingFromZero()
