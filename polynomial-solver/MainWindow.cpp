@@ -19,7 +19,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_saveButton_clicked()
 {
-    UiServices::writeToFile(ui->filePathTextBox->text(), ui->polynomialDisplayTextEdit->toPlainText());
+    QString temp = UiServices::generateCsvFromPolynomial(Polynomial::getInstance());
+    UiServices::writeToFile(ui->filePathTextBox->text(), temp);
 }
 
 void MainWindow::on_loadButton_clicked()
