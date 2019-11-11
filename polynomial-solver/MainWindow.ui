@@ -17,13 +17,25 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>80</y>
-      <width>681</width>
-      <height>431</height>
+      <x>0</x>
+      <y>7</y>
+      <width>801</width>
+      <height>591</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
      <item>
       <widget class="QLabel" name="polynomialDisplayTextEditLabel">
        <property name="text">
@@ -57,7 +69,7 @@
        <item row="2" column="0">
         <widget class="QPushButton" name="loadButton">
          <property name="text">
-          <string>Load</string>
+          <string>Load from csv</string>
          </property>
         </widget>
        </item>
@@ -74,7 +86,7 @@
        <item row="1" column="0">
         <widget class="QPushButton" name="saveButton">
          <property name="text">
-          <string>Save</string>
+          <string>Save as csv</string>
          </property>
         </widget>
        </item>
