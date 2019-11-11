@@ -60,7 +60,7 @@ public:
      * \param hint floating-point value to start searching for polynomial solution (defaults to 0.0)
      * \return floating-point value approximation of solution which lies closer than mPrecision to real solution
      */
-    double solveUsingPrediction(double hint);
+    double findSingleSolutionPoint(double hint = 0.0);
 
     //! Setter for solution prevision value
     void setPrecision(double precision) {mPrecision = precision;}

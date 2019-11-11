@@ -56,7 +56,7 @@ void Polynomial::clearData()
     p_mFirstDerivative->clear();
 }
 
-double Polynomial::solveUsingPrediction(double hint = 0.0)
+double Polynomial::findSingleSolutionPoint(double hint)
 {
     calculateDerivative();
     double result = hint;
