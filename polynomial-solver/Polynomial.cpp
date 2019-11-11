@@ -37,7 +37,7 @@ Polynomial::~Polynomial()
 double Polynomial::functionValueAtPoint(List<Indeterminate>* functionHandler, double xPoint)
 {
     double result = 0.0;
-    for(Node<Indeterminate>* node = functionHandler->getHead(); node != functionHandler->getTail(); node = node->getNext()){
+    for(Node<Indeterminate>* node = functionHandler->getHead(); node != nullptr; node = node->getNext()){
         Indeterminate curr = node->getValue();
         result += curr.mCoefficient * pow(xPoint, curr.mPower);
     }
