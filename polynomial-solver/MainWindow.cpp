@@ -45,3 +45,9 @@ void MainWindow::on_calculateButton_clicked()
         ui->foundSolutionsDisplayTextEdit->append(QString("x = %1").arg(solution));
     }
 }
+
+void MainWindow::on_setPrecisionButton_clicked()
+{
+    polynomialInstance.setPrecision(ui->precisionInputLineEdit->text().toDouble());
+    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(polynomialInstance.getPrecision()));
+}

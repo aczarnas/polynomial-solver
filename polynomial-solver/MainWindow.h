@@ -31,6 +31,8 @@ private slots:
 
     void on_calculateButton_clicked();
 
+    void on_setPrecisionButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
