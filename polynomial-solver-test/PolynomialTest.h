@@ -13,6 +13,7 @@ public:
 signals:
 
 private slots:
+    void init();
     void cleanup();
     void SecondDegreePolynomial_SolveWithWithoutPrediction_ProperResult();
     void FourthDegreePolynomial_SolveWithWithoutPrediction_ProperResult();

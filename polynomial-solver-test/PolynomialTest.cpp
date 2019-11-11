@@ -8,6 +8,11 @@ PolynomialTest::PolynomialTest(QObject *parent) : QObject(parent)
 
 }
 
+void PolynomialTest::init()
+{
+    Polynomial::getInstance().clearData();
+}
+
 void PolynomialTest::cleanup()
 {
 
