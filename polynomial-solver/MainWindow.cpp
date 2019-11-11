@@ -34,6 +34,7 @@ void MainWindow::on_loadButton_clicked()
     ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(poly.getPrimalFormPointer()));
     poly.calculateDerivative();
     ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(poly.getFirstDerivativePointer()));
+    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(poly.getPrecision()));
 }
 
 void MainWindow::on_calculateButton_clicked()
