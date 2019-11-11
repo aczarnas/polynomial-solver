@@ -50,6 +50,12 @@ Polynomial &Polynomial::getInstance()
     return instance;
 }
 
+void Polynomial::clearData()
+{
+    p_mPrimalForm->clear();
+    p_mFirstDerivative->clear();
+}
+
 double Polynomial::solveUsingPrediction(double hint)
 {
     calculateDerivative();

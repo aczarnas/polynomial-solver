@@ -45,10 +45,16 @@ public:
     static Polynomial& getInstance();
 
     /*!
+     * Clears both lists with polynomial and derivative
+     */
+    void clearData();
+
+    /*!
      * Calculates derivative of loaded polynomial
      * \return false when polynomial not loaded, true after successful calculations
      */
     bool calculateDerivative();
+
     /*!
      * Solves loaded polynomial using provided hint
      * \param hint floating-point value to start searching for polynomial solution
