@@ -6,10 +6,38 @@
 #include "Polynomial.h"
 
 namespace UiServices {
+    /*!
+     * \brief Reads whole file and saves content to provided object.
+     * \param [in] filePath Absolute path to file.
+     * \param [out] readText Reference to object which will hold text from file.
+     * \return True if everything went well, false when file could not have been opened.
+     */
     bool readFromFile(const QString filePath, QString& readText);
+    /*!
+     * \brief Writes provided text to file.
+     * \param [in] filePath Absolute path to file.
+     * \param [in] textToWrite Object with text to be written to file.
+     * \return True if everything went well, false when file could not have been opened.
+     */
     bool writeToFile(const QString filePath, const QString textToWrite);
+    /*!
+     * \brief Parses polynomial from text input loaded as csv.
+     * \param [out] poly Reference to object holding polynomial.
+     * \param [in] input Text input to parse.
+     * \return False when input contains nothing, true after successful parsing.
+     */
     bool parsePolynomialFromCsv(Polynomial& poly, const QString input);
+    /*!
+     * \brief Parses polynomials indeterminates to form, which is human-readable.
+     * \param [in] polynomial Indeterminates holder.
+     * \return Parsed text.
+     */
     QString parseIndeterminateListToReadableString(List<Indeterminate>* polynomial);
+    /*!
+     * \brief Generates from polynomial well-constructed string which can be saved to file.
+     * \param [in] poly Reference to polynomial.
+     * \return Generated string.
+     */
     QString generateCsvFromPolynomial(Polynomial& poly);
 }
 

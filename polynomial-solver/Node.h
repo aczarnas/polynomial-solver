@@ -13,8 +13,8 @@ template<typename T> class Node
     Node<T>* p_mPrev;
     Node<T>* p_mNext;
 public:
-    //! Default constructor for Node
     /*!
+     * \brief Default constructor for Node
      * \param value T type value of new Node
      * \param prev optional pointer to previous Node
      * \param next optional pointer to next Node
@@ -26,11 +26,17 @@ public:
     T getValue() {return mValue;}
     //! Getter for next Node on List
     Node<T>* getNext(){return p_mNext;}
-    //! Setter for next Node on List
+    /*!
+    * \brief Setter for next Node on List
+    * \param [in] next Pointer to next node
+    */
     void setNext(Node<T>* next){p_mNext = next;}
     //! Getter for previous Node on List
     Node<T>* getPrev(){return p_mPrev;}
-    //! Setter for previous Node on List
+    /*!
+    * \brief Setter for previous Node on List
+    * \param [in] prev Pointer to previous node
+    */
     void setPrev(Node<T>* prev){p_mPrev = prev;}
 };
 

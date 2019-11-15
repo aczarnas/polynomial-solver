@@ -15,7 +15,10 @@ template<typename T> class List
     Node<T>* p_mHead;
     Node<T>* p_mTail;
 public:
-    //! Default constructor taking optional parameter with head node pointer
+    /*!
+     * \brief Default constructor taking optional parameter with head node pointer
+     * \param head Optional pointer to head node of new list
+     */
     explicit List(Node<T>* head = nullptr){
         if(head != nullptr){
             p_mTail = p_mHead = head;
@@ -38,9 +41,9 @@ public:
     //! Getter for list size
     int getSize() {return mSize;}
 
-    //! Adds T type element to list
     /*!
-     * \param element value to be added to list
+     * \brief Adds T type element to list
+     * \param [in] element value to be added to list
      */
     void append(T element){
         if(mSize == 0){

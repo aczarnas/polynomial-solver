@@ -44,25 +44,26 @@ public:
     //! getInstance method provides access to Polynomial singleton object
     static Polynomial& getInstance();
 
-    /*!
-     * Clears both lists with polynomial and derivative
-     */
+    //! Clears both lists with polynomial and derivative
     void clearData();
 
     /*!
-     * Calculates derivative of loaded polynomial
-     * \return false when polynomial not loaded, true after successful calculations
+     * \brief Calculates derivative of loaded polynomial
+     * \return False when polynomial not loaded, true after successful calculations
      */
     bool calculateDerivative();
 
     /*!
-     * Solves loaded polynomial using provided hint
-     * \param hint floating-point value to start searching for polynomial solution (defaults to 0.0)
-     * \return floating-point value approximation of solution which lies closer than mPrecision to real solution
+     * \brief Solves loaded polynomial using provided hint.
+     * \param [in] hint Floating-point value to start searching with for polynomial solution (defaults to 0.0).
+     * \return Floating-point value approximation of solution which lies closer than mPrecision to real solution.
      */
     double findSingleSolutionPoint(double hint = 0.0);
 
-    //! Setter for solution prevision value
+    /*!
+    * \brief Setter for solution prevision value.
+    * \param [in] precision New value of precision to set.
+    */
     void setPrecision(double precision) {mPrecision = precision;}
     //! Getter for solution precision value
     double getPrecision() {return mPrecision;}
