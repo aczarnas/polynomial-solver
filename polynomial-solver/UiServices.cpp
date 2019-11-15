@@ -28,6 +28,10 @@ bool UiServices::writeToFile(const QString filePath, const QString textToWrite)
 bool UiServices::parsePolynomialFromCsv(Polynomial& poly, const QString input)
 {
     auto lines = input.split('\n');
+    if(lines.empty())
+    {
+        return false;
+    }
     auto line = lines.constBegin();
 
     if(lines[0].contains("x_power")){
