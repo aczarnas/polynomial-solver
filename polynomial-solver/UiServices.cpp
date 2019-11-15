@@ -5,7 +5,8 @@
 bool UiServices::readFromFile(const QString filePath, QString& readText)
 {
     QFile file(filePath);
-    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
         return false;
     }
 
@@ -16,7 +17,8 @@ bool UiServices::readFromFile(const QString filePath, QString& readText)
 bool UiServices::writeToFile(const QString filePath, const QString textToWrite)
 {
     QFile file(filePath);
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Text)){
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
         return false;
     }
 
@@ -28,21 +30,23 @@ bool UiServices::writeToFile(const QString filePath, const QString textToWrite)
 bool UiServices::parsePolynomialFromCsv(Polynomial& poly, const QString input)
 {
     auto lines = input.split('\n');
-    if(lines.empty())
+    if (lines.empty())
     {
         return false;
     }
     auto line = lines.constBegin();
 
-    if(lines[0].contains("x_power")){
+    if (lines[0].contains("x_power"))
+    {
         ++line;
     }
-
     auto primal = poly.getPrimalFormPointer();
     primal->clear();
-    while(line != lines.constEnd()) {
+    while (line != lines.constEnd())
+    {
         auto args = line->split(',');
-        if(args.size() < 2) {
+        if (args.size() < 2)
+        {
             break;
         }
         Indeterminate curr(args[1].toInt(), args[0].toInt());
@@ -56,10 +60,14 @@ QString UiServices::parseIndeterminateListToReadableString(List<Indeterminate>* 
 {
     QString result("");
     Node<Indeterminate>* curr = polynomial->getHead();
-    while(curr != nullptr){
-        if(curr->getValue().mCoefficient == 0.0) {
+    while (curr != nullptr)
+    {
+        if (curr->getValue().mCoefficient == 0.0)
+        {
             continue;
-        } else if(curr->getValue().mCoefficient > 0) {
+        }
+        else if (curr->getValue().mCoefficient > 0)
+        {
             result.append("+");
         }
         result.append(QString("%1x^%2").arg(curr->getValue().mCoefficient).arg(curr->getValue().mPower));
@@ -72,7 +80,8 @@ QString UiServices::generateCsvFromPolynomial(Polynomial& poly)
 {
     QString result("x_power,x_constant\n");
     Node<Indeterminate>* curr = poly.getPrimalFormPointer()->getHead();
-    while(curr != nullptr){
+    while (curr != nullptr)
+    {
         result.append(QString("%1,%2\n").arg(curr->getValue().mPower).arg(curr->getValue().mCoefficient));
         curr = curr->getNext();
     }

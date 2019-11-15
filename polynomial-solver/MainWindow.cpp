@@ -3,9 +3,8 @@
 #include <QStandardPaths>
 #include "UiServices.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent):
+    QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ui->filePathTextBox->setText(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
@@ -40,7 +39,8 @@ void MainWindow::on_calculateButton_clicked()
 {
     bool hintOk = false;
     double hint = ui->hintInputLineEdit->text().toDouble(&hintOk);
-    if(hintOk) {
+    if (hintOk)
+    {
         double solution = polynomialInstance.findSingleSolutionPoint(hint);
         ui->foundSolutionsDisplayTextEdit->append(QString("x = %1").arg(solution));
     }
