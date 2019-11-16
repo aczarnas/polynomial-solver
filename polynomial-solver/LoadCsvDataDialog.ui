@@ -30,6 +30,9 @@
          <verstretch>1</verstretch>
         </sizepolicy>
        </property>
+       <property name="columnCount">
+        <number>2</number>
+       </property>
        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
         <bool>false</bool>
        </attribute>
@@ -44,11 +47,6 @@
        <column>
         <property name="text">
          <string>x_coefficient</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>indeterminate</string>
         </property>
        </column>
       </widget>
