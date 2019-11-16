@@ -3,6 +3,7 @@
 #define UISERVICES_H
 
 #include <QFile>
+#include <QTableWidget>
 #include "Polynomial.h"
 
 namespace UiServices {
@@ -39,6 +40,13 @@ namespace UiServices {
      * \return Generated string.
      */
     QString generateCsvFromPolynomial(Polynomial& poly);
+    /*!
+     * \brief Fills provided table with data of existing polynomial. If polynomial wasn't loaded,
+     *      does nothing.
+     * \param [in] poly Polynomial object with required data.
+     * \param [in, out] table Table to fill.
+     */
+    void fillTableWithPolynomialData(Polynomial& poly, QTableWidget* table);
 }
 
 #endif // UISERVICES_H

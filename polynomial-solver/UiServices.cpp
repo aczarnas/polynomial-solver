@@ -87,3 +87,24 @@ QString UiServices::generateCsvFromPolynomial(Polynomial& poly)
     }
     return result;
 }
+
+void UiServices::fillTableWithPolynomialData(Polynomial& poly, QTableWidget* table)
+{
+    auto primalFormPointer = poly.getPrimalFormPointer();
+    auto polynomialSize = primalFormPointer->getSize();
+    if (polynomialSize == 0)
+    {
+        return;
+    }
+    auto powerColumn = 0;
+    auto coeffColumn = 1;
+
+    table->clearContents();
+    table->setRowCount(polynomialSize);
+    for(auto node = primalFormPointer->getHead(); node != nullptr; node = node->getNext())
+    {
+        auto indeterm = node->getValue();
+        table->setItem(indeterm.mPower, powerColumn, new QTableWidgetItem(QString("%1").arg(indeterm.mPower)));
+        table->setItem(indeterm.mPower, coeffColumn, new QTableWidgetItem(QString("%1").arg(indeterm.mCoefficient)));
+    }
+}
