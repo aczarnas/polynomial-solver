@@ -2,6 +2,7 @@
 #include "ui_MainWindow.h"
 #include <QStandardPaths>
 #include "UiServices.h"
+#include "LoadCsvDataDialog.h"
 
 MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent), ui(new Ui::MainWindow)
@@ -50,4 +51,10 @@ void MainWindow::on_setPrecisionButton_clicked()
 {
     polynomialInstance.setPrecision(ui->precisionInputLineEdit->text().toDouble());
     ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(polynomialInstance.getPrecision()));
+}
+
+void MainWindow::on_editButton_clicked()
+{
+    LoadCsvDataDialog dialog(this);
+    dialog.exec();
 }

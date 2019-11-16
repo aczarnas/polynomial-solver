@@ -33,6 +33,8 @@ private slots:
 
     void on_setPrecisionButton_clicked();
 
+    void on_editButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
