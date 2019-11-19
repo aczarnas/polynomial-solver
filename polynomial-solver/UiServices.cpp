@@ -101,10 +101,25 @@ void UiServices::fillTableWithPolynomialData(Polynomial& poly, QTableWidget* tab
 
     table->clearContents();
     table->setRowCount(polynomialSize);
-    for(auto node = primalFormPointer->getHead(); node != nullptr; node = node->getNext())
+    for (auto node = primalFormPointer->getHead(); node != nullptr; node = node->getNext())
     {
         auto indeterm = node->getValue();
         table->setItem(indeterm.mPower, powerColumn, new QTableWidgetItem(QString("%1").arg(indeterm.mPower)));
         table->setItem(indeterm.mPower, coeffColumn, new QTableWidgetItem(QString("%1").arg(indeterm.mCoefficient)));
+    }
+}
+
+void UiServices::updatePolynomialDataFromUi(Polynomial &poly, QTableWidget *table)
+{
+    if (table->rowCount() == 0)
+    {
+        return;
+    }
+
+    for (auto node = poly.getPrimalFormPointer()->getHead(); node != nullptr; node = node->getNext())
+    {
+        auto item = table->item(node->getValue().mPower, 1);
+        double newCoefficient = item->text().toDouble();
+        node->getValue().updateCoefficient(newCoefficient);
     }
 }

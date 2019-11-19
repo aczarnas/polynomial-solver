@@ -24,6 +24,8 @@ struct Indeterminate
      * \param power power value of Indeterminate
      */
     Indeterminate(double constant, int power): mCoefficient(constant), mPower(power) {}
+
+    void updateCoefficient(double newCoefficient) {mCoefficient = newCoefficient;}
 };
 
 class Polynomial

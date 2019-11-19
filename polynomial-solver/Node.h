@@ -22,8 +22,8 @@ public:
     explicit Node(T value, Node<T>* prev = nullptr, Node<T>* next = nullptr) :
         mValue(value), p_mPrev(prev), p_mNext(next){}
 
-    //! Getter for Node's value
-    T getValue() {return mValue;}
+    //! Getter for Node's value reference
+    T& getValue() {return mValue;}
     //! Getter for next Node on List
     Node<T>* getNext(){return p_mNext;}
     /*!

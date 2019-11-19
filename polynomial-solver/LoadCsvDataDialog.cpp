@@ -14,3 +14,8 @@ LoadCsvDataDialog::~LoadCsvDataDialog()
 {
     delete ui;
 }
+
+void LoadCsvDataDialog::on_buttonBox_accepted()
+{
+    UiServices::updatePolynomialDataFromUi(Polynomial::getInstance(), ui->tableWidget);
+}

@@ -47,6 +47,12 @@ namespace UiServices {
      * \param [in, out] table Table to fill.
      */
     void fillTableWithPolynomialData(Polynomial& poly, QTableWidget* table);
+    /*!
+     * \brief Updates polynomial after edits made inside modal dialog.
+     * \param [in, out] poly Polynomial object to update.
+     * \param [in] table Table with edited data.
+     */
+    void updatePolynomialDataFromUi(Polynomial& poly, QTableWidget* table);
 }
 
 #endif // UISERVICES_H
