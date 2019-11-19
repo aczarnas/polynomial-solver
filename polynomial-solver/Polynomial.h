@@ -23,7 +23,7 @@ struct Indeterminate
      * \param constant coefficient value of Indeterminate
      * \param power power value of Indeterminate
      */
-    Indeterminate(double constant, int power): mCoefficient(constant), mPower(power) {}
+    Indeterminate(double coefficient, int power): mCoefficient(coefficient), mPower(power) {}
 
     void updateCoefficient(double newCoefficient) {mCoefficient = newCoefficient;}
 };
