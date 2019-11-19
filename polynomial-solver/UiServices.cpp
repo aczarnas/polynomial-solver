@@ -64,6 +64,7 @@ QString UiServices::parseIndeterminateListToReadableString(List<Indeterminate>* 
     {
         if (curr->getValue().mCoefficient == 0.0)
         {
+            curr = curr->getNext();
             continue;
         }
         else if (curr->getValue().mCoefficient > 0)
