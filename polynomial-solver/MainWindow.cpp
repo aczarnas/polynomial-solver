@@ -29,11 +29,7 @@ void MainWindow::on_loadButton_clicked()
     UiServices::readFromFile(ui->filePathTextBox->text(), temp);
 
     UiServices::parsePolynomialFromCsv(polynomialInstance, temp);
-
-    ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getPrimalFormPointer()));
-    polynomialInstance.calculateDerivative();
-    ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getFirstDerivativePointer()));
-    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(polynomialInstance.getPrecision()));
+    updateDisplayedPolynomial();
 }
 
 void MainWindow::on_calculateButton_clicked()
@@ -57,4 +53,13 @@ void MainWindow::on_editButton_clicked()
 {
     LoadCsvDataDialog dialog(this);
     dialog.exec();
+    updateDisplayedPolynomial();
+}
+
+void MainWindow::updateDisplayedPolynomial()
+{
+    polynomialInstance.calculateDerivative();
+    ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getPrimalFormPointer()));
+    ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getFirstDerivativePointer()));
+    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(polynomialInstance.getPrecision()));
 }

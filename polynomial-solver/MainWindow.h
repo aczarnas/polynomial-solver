@@ -37,5 +37,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    void updateDisplayedPolynomial();
 };
 #endif // MAINWINDOW_H
