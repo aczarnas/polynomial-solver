@@ -63,6 +63,13 @@ public:
     double findSingleSolutionPoint(double hint = 0.0);
 
     /*!
+     * \brief Divide polynomial using Horner's method and given point x.
+     * \param [in] xValue Point value used for dividing by (x - xValue)
+     * \return Value of calculated remainder from division.
+     */
+    double divideUsingHornersMethod(double xValue);
+
+    /*!
     * \brief Setter for solution prevision value.
     * \param [in] precision New value of precision to set.
     */
