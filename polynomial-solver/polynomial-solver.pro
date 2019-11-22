@@ -7,15 +7,15 @@ TEMPLATE = app
 include(../polynomial-solver-src.pri)
 
 SOURCES += main.cpp \
-    LoadCsvDataDialog.cpp \
+    EditCsvDataDialog.cpp \
     MainWindow.cpp \
     UiServices.cpp
 
 HEADERS += \
-    LoadCsvDataDialog.h \
+    EditCsvDataDialog.h \
     MainWindow.h \
     UiServices.h
 
 FORMS += \
-    LoadCsvDataDialog.ui \
+    EditCsvDataDialog.ui \
     MainWindow.ui

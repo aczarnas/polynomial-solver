@@ -2,7 +2,7 @@
 #include "ui_MainWindow.h"
 #include <QStandardPaths>
 #include "UiServices.h"
-#include "LoadCsvDataDialog.h"
+#include "EditCsvDataDialog.h"
 
 MainWindow::MainWindow(QWidget *parent):
     QMainWindow(parent), ui(new Ui::MainWindow)
@@ -51,7 +51,7 @@ void MainWindow::on_setPrecisionButton_clicked()
 
 void MainWindow::on_editButton_clicked()
 {
-    LoadCsvDataDialog dialog(this);
+    EditCsvDataDialog dialog(this);
     dialog.exec();
     updateDisplayedPolynomial();
 }

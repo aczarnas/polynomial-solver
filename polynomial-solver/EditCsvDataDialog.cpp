@@ -1,21 +1,21 @@
-#include "LoadCsvDataDialog.h"
-#include "ui_LoadCsvDataDialog.h"
+#include "EditCsvDataDialog.h"
+#include "ui_EditCsvDataDialog.h"
 #include "UiServices.h"
 
-LoadCsvDataDialog::LoadCsvDataDialog(QWidget *parent) :
+EditCsvDataDialog::EditCsvDataDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::LoadCsvDataDialog)
+    ui(new Ui::EditCsvDataDialog)
 {
     ui->setupUi(this);
     UiServices::fillTableWithPolynomialData(Polynomial::getInstance(), ui->tableWidget);
 }
 
-LoadCsvDataDialog::~LoadCsvDataDialog()
+EditCsvDataDialog::~EditCsvDataDialog()
 {
     delete ui;
 }
 
-void LoadCsvDataDialog::on_buttonBox_accepted()
+void EditCsvDataDialog::on_buttonBox_accepted()
 {
     UiServices::updatePolynomialDataFromUi(Polynomial::getInstance(), ui->tableWidget);
 }
