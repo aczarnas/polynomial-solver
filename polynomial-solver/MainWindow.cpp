@@ -39,7 +39,7 @@ void MainWindow::on_calculateButton_clicked()
     if (hintOk)
     {
         double solution = polynomialInstance.findSingleSolutionPoint(hint);
-        ui->foundSolutionsDisplayTextEdit->append(QString("x = %1").arg(solution));
+        ui->foundSolutionsDisplayTextEdit->append(QString("hint = %1; x = %2").arg(hint).arg(solution));
     }
 }
 
@@ -61,5 +61,5 @@ void MainWindow::updateDisplayedPolynomial()
     polynomialInstance.calculateDerivative();
     ui->polynomialDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getPrimalFormPointer()));
     ui->firstDerivativeDisplayTextEdit->setText(UiServices::parseIndeterminateListToReadableString(polynomialInstance.getFirstDerivativePointer()));
-    ui->foundSolutionsDisplayTextEdit->setText(QString("precision = %1").arg(polynomialInstance.getPrecision()));
+    ui->precisionInputLineEdit->setText(QString("%1").arg(polynomialInstance.getPrecision()));
 }
